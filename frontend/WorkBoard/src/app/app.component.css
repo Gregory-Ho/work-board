@@ -1,0 +1,22 @@
+.row > div {
+  border: solid blue 1px;
+  color: green;
+
+  /*margin-right: 5px;*/
+  background-color: grey;
+  fill: yellow;
+}
+.row > div {
+  /*padding: 0;*/
+}
+.row {
+
+}
+
+.container-fluid {
+  position: fixed;
+  height: 100%;
+  /*margin-right: -51px;*/
+}
+
+
