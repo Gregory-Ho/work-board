@@ -3,12 +3,7 @@
   height: 100vh;
   position: fixed;
   padding: 0;
-  transition: width 300ms ease-out 400ms;
   border-right: blue solid 1px;
-}
-
-.container-fluid:hover {
-  width: 15vw;
 }
 
 .row {
@@ -19,7 +14,7 @@ img {
   box-sizing: border-box;
   width: 5vw;
   display: inline;
-  padding: 10px 10px 0px 10px;
+  padding: 1vw 1vw 0px 1vw;
 }
 
 a {
