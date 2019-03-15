@@ -1,4 +1,4 @@
-.container-fluid {
+.sideNavContainer {
   width: 5vw;
   height: 100vh;
   position: fixed;
@@ -6,18 +6,56 @@
   border-right: blue solid 1px;
 }
 
-.row {
-  margin: 0;
+@media (max-width: 992px) {
+  /* width < 768 show top nav*/
+  .sideNavContainer {
+    display: none;
+  }
 }
 
-img {
+.navRow {
+  margin: 0;
+  padding-top: 1vw;
+}
+
+.navIcon {
   box-sizing: border-box;
   width: 5vw;
   display: inline;
-  padding: 1vw 1vw 0px 1vw;
+  padding: 0 1vw 0 1vw;
 }
 
-a {
+@media (max-width: 992px) {
+  .navIcon {
+    padding-left: 0;
+    width: 10vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .navIcon {
+    width: 17vw;
+    padding-right: 3vw;
+  }
+
+  .navRow {
+    padding-top: 3vw;
+  }
+}
+
+.sideNavLink {
   overflow: hidden;
   white-space: nowrap;
 }
+
+.topNavContainer {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .topNavContainer {
+    display: flex;
+  }
+}
+
+
