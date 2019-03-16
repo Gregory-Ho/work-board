@@ -1,5 +1,6 @@
 .sideNavContainer {
   width: 5vw;
+  max-width: 80px;
   height: 100vh;
   position: fixed;
   padding: 0;
@@ -27,8 +28,10 @@
 .navIcon {
   box-sizing: border-box;
   width: 5vw;
+  max-width: 80px;
   display: inline;
-  padding: 0 1vw;
+  padding: 0 16px;
+
 }
 
 .navLinkSelector {
@@ -36,12 +39,19 @@
   box-sizing: border-box;
   padding: 0.25vw 0 0.25vw 0;
   width: 14vw;
+  max-width: 224px;
   border-radius: 0 5vw 5vw 0;
   background-color: #cccccc;
 }
 
 .navLinkSelector:hover {
   background-color: #e6f7ff;
+}
+
+@media (max-width: 1600px) {
+  .navIcon {
+    padding: 0 1vw;
+  }
 }
 
 @media (max-width: 992px) {
