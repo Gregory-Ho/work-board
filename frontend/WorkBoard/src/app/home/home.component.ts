@@ -27,8 +27,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Remove the delays if touch device
   onMouseEnter(): void {
-    $('.container-fluid').stop().dequeue().delay(350).animate({
+    $('.container-fluid').dequeue().stop().delay(350).animate({
       width: '15vw'
     }, {
       duration: '200',
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit {
   }
 
   onMouseLeave(): void {
-    $('.container-fluid').stop().dequeue().delay(350).animate({
+    $('.container-fluid').dequeue().stop().delay(350).animate({
       width: '5vw'
     }, {
       duration: '200',

@@ -5,7 +5,7 @@
 
 <body>
 <nav class="navbar navbar-light bg-light topNavContainer">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Work Board</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
           aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,48 +13,58 @@
 
   <div class="collapse navbar-collapse topNavBar" id="navbarSupportedContent">
     <ul class="navbar-nav">
-      <li class="nav-item navRow">
-        <img class="navIcon" [src]="homeIcon" [title]="homeTitle" alt="{{homeTitle}}">{{homeTitle}}
+      <li class="nav-item navRow firstNavRow">
+        <a class="navLinkSelector">
+          <img class="navIcon" [src]="homeIcon" [title]="homeTitle" alt="{{homeTitle}}">{{homeTitle}}
+        </a>
       </li>
       <li class="nav-item navRow">
-        <img class="navIcon" [src]="tasksIcon" [title]="tasksTitle" alt="{{tasksTitle}}">{{tasksTitle}}
+        <a class="navLinkSelector">
+          <img class="navIcon" [src]="tasksIcon" [title]="tasksTitle" alt="{{tasksTitle}}">{{tasksTitle}}
+        </a>
       </li>
       <li class="nav-item navRow">
-        <img class="navIcon" [src]="plannerIcon" [title]="plannerTitle" alt="{{plannerTitle}}">{{plannerTitle}}
+        <a class="navLinkSelector">
+          <img class="navIcon" [src]="plannerIcon" [title]="plannerTitle" alt="{{plannerTitle}}">{{plannerTitle}}
+        </a>
       </li>
       <li class="nav-item navRow">
-        <img class="navIcon" [src]="analyticsIcon" [title]="analyticsTitle" alt="{{analyticsTitle}}">{{analyticsTitle}}
+        <a class="navLinkSelector">
+          <img class="navIcon" [src]="analyticsIcon" [title]="analyticsTitle" alt="{{analyticsTitle}}">{{analyticsTitle}}
+        </a>
       </li>
       <li class="nav-item navRow">
-        <img class="navIcon" [src]="settingsIcon" [title]="settingsTitle" alt="{{settingsTitle}}">{{settingsTitle}}
+        <a class="navLinkSelector">
+          <img class="navIcon" [src]="settingsIcon" [title]="settingsTitle" alt="{{settingsTitle}}">{{settingsTitle}}
+        </a>
       </li>
     </ul>
   </div>
 </nav>
 
 <nav class="container-fluid sideNavContainer" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-  <div class="row navRow">
-    <a class="sideNavLink">
+  <div class="row navRow firstNavRow">
+    <a class="sideNavLink navLinkSelector">
       <img class="navIcon" [src]="homeIcon" [title]="homeTitle" alt="{{homeTitle}}">{{homeTitle}}
     </a>
   </div>
   <div class="row navRow">
-    <a class="sideNavLink">
+    <a class="sideNavLink navLinkSelector">
       <img class="navIcon" [src]="tasksIcon" [title]="tasksTitle" alt="{{tasksTitle}}">{{tasksTitle}}
     </a>
   </div>
   <div class="row navRow">
-    <a class="sideNavLink">
+    <a class="sideNavLink navLinkSelector">
       <img class="navIcon" [src]="plannerIcon" [title]="plannerTitle" alt="{{plannerTitle}}">{{plannerTitle}}
     </a>
   </div>
   <div class="row navRow">
-    <a class="sideNavLink">
+    <a class="sideNavLink navLinkSelector">
       <img class="navIcon" [src]="analyticsIcon" [title]="analyticsTitle" alt="{{analyticsTitle}}">{{analyticsTitle}}
     </a>
   </div>
   <div class="row navRow">
-    <a class="sideNavLink">
+    <a class="sideNavLink navLinkSelector">
       <img class="navIcon" [src]="settingsIcon" [title]="settingsTitle" alt="{{settingsTitle}}">{{settingsTitle}}
     </a>
   </div>
