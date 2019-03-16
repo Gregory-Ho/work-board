@@ -1,0 +1,8 @@
+Mar 16:
+  Finished Nav bar mostly. It's fully responsive now.
+  Added colours and border rounding. Not sure if  you want rounded borders for
+  the full size version side bar, for active status.
+  * Need to implement active flag to indicate which link should be highlighted
+  * Need to find suitable colours. We can remove the bg-light from bootstrap nav.
+  * Refactor the CSS?
+  * Do we want to add a background color to the side bar?
