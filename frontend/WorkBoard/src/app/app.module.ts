@@ -6,12 +6,14 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { NavComponent } from "./nav/nav.component";
 
 import {$} from "jquery";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule

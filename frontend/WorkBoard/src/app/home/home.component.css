@@ -1,0 +1,50 @@
+.mainContainer {
+  margin: 0;
+  padding: 0;
+}
+
+.alignCenter {
+  max-width: 672px;
+  margin: auto;
+}
+
+.row {
+  margin: 0;
+  max-width: 672px;
+}
+
+@media (max-width: 672px) {
+  .row, .alignCenter {
+    max-width: 336px;
+  }
+}
+
+.card {
+  width: 320px;
+  height: 250px;
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .13);
+}
+
+.card:hover {
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
+  transition-duration: 150ms;
+}
+
+.navIcon {
+  display: block;
+  width: 80px;
+  margin: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.iconText {
+  font-size: 2rem;
+  font-weight: 300;
+}
