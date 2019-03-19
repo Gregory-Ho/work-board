@@ -7,17 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  homeIcon: string = 'assets/icons/logo_icon.png';
   tasksIcon: string = 'assets/icons/tasks_icon.png';
   plannerIcon: string = 'assets/icons/planner_icon.png';
   analyticsIcon: string = 'assets/icons/analytics_icon.png';
   settingsIcon: string = 'assets/icons/settings_icon.png';
 
-  homeTitle: string = 'Home';
   tasksTitle: string = 'My Tasks';
   plannerTitle: string = 'Planner';
   analyticsTitle: string = 'Analytics';
   settingsTitle: string = 'Settings';
+
+  userName: string = "Huskit8520g";
+  firstName: string = "";
+  lastName: string = "";
 
   constructor() { }
 

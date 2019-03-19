@@ -1,3 +1,19 @@
+.welcomeTitle {
+  font-weight: 300;
+  text-align: center;
+  padding-top: 5vh;
+  padding-bottom: 8vh;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px){
+  .welcomeTitle {
+    padding-top: 4vw;
+    padding-bottom: 5vw;
+  }
+}
+
 .mainContainer {
   margin: 0;
   padding: 0;
@@ -6,6 +22,7 @@
 .alignCenter {
   max-width: 672px;
   margin: auto;
+  height: 50%;
 }
 
 .row {

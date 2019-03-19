@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
 
   // Remove the delays if touch device
   onMouseEnter(): void {
-    $('.container-fluid').dequeue().stop().delay(350).animate({
+    $('.sideNavContainer').dequeue().stop().delay(350).animate({
       "width": '15vw',
       "max-width": "240px"
     }, {
@@ -39,7 +39,7 @@ export class NavComponent implements OnInit {
   }
 
   onMouseLeave(): void {
-    $('.container-fluid').dequeue().stop().delay(350).animate({
+    $('.sideNavContainer').dequeue().stop().delay(350).animate({
       "width": '5vw',
       "max-width": "80px"
     }, {
