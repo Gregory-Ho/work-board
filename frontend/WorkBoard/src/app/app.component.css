@@ -1,22 +1,30 @@
 .contentContainer {
   min-width: 100vw;
   min-height: 100vh;
-  left: 80px;
+  padding-left: 80px;
+  box-sizing: border-box;
   background-color: #f8f9fa;
   background-color: rgba(12, 13, 14, 0.05);
+  z-index: 1;
 }
 
 @media (max-width: 1600px) {
   .contentContainer {
-    left: 5vw;
+    padding-left: 5vw;
   }
 }
 
 @media (max-width: 992px) {
   .contentContainer {
-    left: 0;
+    padding-left: 0;
     min-height: calc(100vh - 2.5rem - 16px);
   }
 }
+
+app-nav {
+  z-index: 2;
+  position: fixed;
+}
+
 
 
