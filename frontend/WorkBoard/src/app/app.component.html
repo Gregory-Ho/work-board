@@ -1,4 +1,4 @@
-<app-nav></app-nav>
+<app-nav *ngIf="router.url != '/home'"></app-nav>
 <div class="contentContainer">
   <router-outlet></router-outlet>
 </div>
