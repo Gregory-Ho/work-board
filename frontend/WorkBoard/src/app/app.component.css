@@ -8,6 +8,11 @@
   z-index: 1;
 }
 
+app-nav {
+  z-index: 2;
+  position: fixed;
+}
+
 @media (max-width: 1600px) {
   .contentContainer {
     padding-left: 5vw;
@@ -19,12 +24,13 @@
     padding-left: 0;
     min-height: calc(100vh - 2.5rem - 16px);
   }
+
+  app-nav {
+    position: initial;
+  }
 }
 
-app-nav {
-  z-index: 2;
-  position: fixed;
-}
+
 
 
 
