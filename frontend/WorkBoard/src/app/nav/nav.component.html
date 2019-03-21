@@ -18,12 +18,12 @@
   <div class="collapse navbar-collapse topNavBar" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item navRow firstNavRow">
-        <a class="navLinkSelector" routerLink="/home">
+        <a class="navLinkSelector" routerLink="/home" routerLinkActive="activatedRoute">
           <img class="navIcon" [src]="homeIcon" [title]="homeTitle" alt="{{homeTitle}}">{{homeTitle}}
         </a>
       </li>
       <li class="nav-item navRow">
-        <a class="navLinkSelector" routerLink="/dashboard">
+        <a class="navLinkSelector" routerLink="/dashboard" routerLinkActive="activatedRoute">
           <img class="navIcon" [src]="tasksIcon" [title]="tasksTitle" alt="{{tasksTitle}}">{{tasksTitle}}
         </a>
       </li>
@@ -48,12 +48,12 @@
 
 <nav class="container-fluid sideNavContainer" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
   <div class="row navRow firstNavRow">
-    <a class="sideNavLink navLinkSelector" routerLink="/home">
+    <a class="sideNavLink navLinkSelector" routerLink="/home"  routerLinkActive="activatedRoute">
       <img class="navIcon" [src]="homeIcon" [title]="homeTitle" alt="{{homeTitle}}">{{homeTitle}}
     </a>
   </div>
   <div class="row navRow">
-    <a class="sideNavLink navLinkSelector" routerLink="/dashboard">
+    <a class="sideNavLink navLinkSelector" routerLink="/dashboard"  routerLinkActive="activatedRoute">
       <img class="navIcon" [src]="tasksIcon" [title]="tasksTitle" alt="{{tasksTitle}}">{{tasksTitle}}
     </a>
   </div>

@@ -30,21 +30,36 @@ export class NavComponent implements OnInit {
   // Remove the delays if touch device
   onMouseEnter(): void {
     $('.sideNavContainer').dequeue().stop().delay(350).animate({
-      "width": '15vw',
-      "max-width": "240px"
+      'width': '15vw',
+      'max-width': '240px'
     }, {
       duration: '200',
-      easing: 'swing'
+      easing: 'swing',
+      step: (now, fx) => {
+        if (now >= fx.end * 0.90) {
+          $('.navLinkSelector').css({
+            'border-radius': '0 5vw 5vw 0'
+          });
+        }
+      }
+
     });
   }
 
   onMouseLeave(): void {
     $('.sideNavContainer').dequeue().stop().delay(350).animate({
-      "width": '5vw',
-      "max-width": "80px"
+      'width': '5vw',
+      'max-width': '80px'
     }, {
       duration: '200',
-      easing: 'swing'
+      easing: 'swing',
+      step: (now, fx) => {
+        if (now <= fx.start * 0.90) {
+          $('.navLinkSelector').css({
+            'border-radius': '0'
+          });
+        }
+      }
     });
   }
 
