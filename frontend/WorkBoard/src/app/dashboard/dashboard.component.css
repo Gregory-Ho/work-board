@@ -1,0 +1,55 @@
+.rightNavOptions {
+  margin-left: auto;
+  padding-right: 0;
+  margin-right: 0;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-control {
+  width: auto;
+  flex-grow: 1;
+  margin: 3px 0 3px 1rem;
+}
+
+.sortOptions{
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  padding-left: 1rem;
+}
+.selectedSortMethod {
+  display: inline;
+  width: auto;
+}
+.dropdown, .sortBy {
+  display: inline-block;
+  padding-right: 0;
+}
+
+.dropdown {
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown-toggle:after {
+  content: none;
+}
+
+.navbar {
+  padding-left: 0;
+}
+
+@media (max-width:992px){
+  .navbar {
+    padding-top: 0;
+  }
+}
+.navbar-brand {
+  padding-left: 1rem;
+}
+.create {
+  padding: 0.1875rem 0.375rem;
+}

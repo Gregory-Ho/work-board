@@ -58,6 +58,7 @@
   }
 
   .navLinkSelector {
+    border-radius: 0 5vw 5vw 0;
     padding-left: 16px;
     max-width: none;
     width: calc(100vw - 16px);
@@ -103,17 +104,14 @@
 
 .topNavContainer {
   display: none;
-  padding-left: 0;
+  padding-left: 16px;
 }
 
 @media (max-width: 992px) {
   .topNavContainer {
     display: flex;
+    padding-left: 0;
   }
-}
-
-.topNavContainer {
-  padding-left: 16px;
 }
 
 a {
@@ -127,5 +125,16 @@ a {
 
 .activatedRoute:hover {
   background-color: #b3e7ff;
+}
+
+.navbar-brand {
+  padding-left: 0;
+}
+
+@media (max-width: 992px) {
+  .navbar-brand {
+    display: flex;
+    padding-left: 16px;
+  }
 }
 
