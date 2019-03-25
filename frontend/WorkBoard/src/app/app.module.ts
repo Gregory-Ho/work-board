@@ -2,19 +2,23 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import {TaskListComponent} from './work/task-list/task-list.component';
 import {NavComponent} from './nav/nav.component';
 
 import {$} from 'jquery';
 import {HomeComponent} from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ToolbarComponent } from './work/toolbar/toolbar.component';
+import { WorkComponent } from './work/work.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    TaskListComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    ToolbarComponent,
+    WorkComponent
   ],
   imports: [
     BrowserModule,

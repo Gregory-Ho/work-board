@@ -1,0 +1,14 @@
+.container-fluid {
+  padding: 0.5rem;
+}
+.row {
+  margin: 0;
+}
+
+.cardContainer {
+  padding: 0.5rem;
+}
+
+.custom {
+  max-width: 100%;
+}

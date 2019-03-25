@@ -29,11 +29,6 @@
   padding-right: 0;
 }
 
-.dropdown {
-  display: inline-flex;
-  align-items: center;
-}
-
 .dropdown-toggle:after {
   content: none;
 }
