@@ -1,99 +1,22 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 cardContainer">
-      <div class="card h-100 border-primary">
-        <div class="card-header bg-primary text-light  ">
-          Sample Task Summary/Description Heading WHAT IF THE SUMMARY IS VERY LONG LIKE THIS?
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            This is some text that would describe the task. This is some text that would describe the task.This is some text that would describe the task.This is some text that would describe the task.This is some text that would describe the task.This is some text that would describe the
-            task.It should be cut off if too long.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 cardContainer">
-      <div class="card h-100 border-success">
-        <div class="card-header bg-success text-light  ">
-          Sample Task Summary/Description Heading
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            This is some text that would describe the task. This is some text that would describe the task.This is some text that would describe the
-            task.It should be cut off if too long.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 cardContainer">
-      <div class="card h-100 border-primary">
-        <div class="card-header bg-warning ">
-          Sample Task Summary/Description Heading
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            This is some text that would describe the task. This is some text that would describe the task.This is some text that would describe the
-            task.It should be cut off if too long.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 cardContainer">
+    <div *ngFor="let task of tasks" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 cardContainer">
       <div class="card h-100 border-primary">
         <div class="card-header bg-primary text-light">
-          Sample Task Summary/Description Heading
+          {{task.summary}}
         </div>
         <div class="card-body">
-          <p class="card-text">
-            This is some text that would describe the task. This is some text that would describe the task.This is some text that would describe the
-            task.It should be cut off if too long.
+          <p class="card-text description">
+            {{task.description}}
           </p>
+          <div class="tags">
+            <a *ngFor="let tag of task.tags" class="tag">{{tag}}</a>
+          </div>
         </div>
         <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 cardContainer">
-      <div class="card h-100 border-primary">
-        <div class="card-header bg-primary text-light">
-          Sample Task Summary/Description Heading
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            This is some text that would describe the task. This is some text that would describe the task.This is some text that would describe the
-            task.It should be cut off if too long.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 cardContainer">
-      <div class="card h-100 border-primary">
-        <div class="card-header bg-primary text-light">
-          Sample Task Summary/Description Heading
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            This is some text that would describe the task. This is some text that would describe the task.This is some text that would describe the
-            task.It should be cut off if too long.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Last updated 3 mins ago</small>
+          <small class="text-muted dueIn">{{task.dueDate}}}</small>
+          <small class="text-muted taskId">#{{task.id}}</small>
         </div>
       </div>
     </div>
