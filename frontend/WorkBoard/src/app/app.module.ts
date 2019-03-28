@@ -10,6 +10,7 @@ import {HomeComponent} from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ToolbarComponent } from './work/toolbar/toolbar.component';
 import { WorkComponent } from './work/work.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WorkComponent } from './work/work.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
