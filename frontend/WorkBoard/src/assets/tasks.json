@@ -2,9 +2,9 @@
   {
     "id": 532,
     "summary": "Summary",
-    "dueDate": "2019-03-28T02:38:12.880Z",
-    "created": "2019-03-28T02:38:12.880Z",
-    "updated": "2019-03-28T02:38:12.880Z",
+    "dueDate": "2019-03-22T21:00:00.000",
+    "created": "2019-03-28T02:38:12.880",
+    "updated": "2019-03-28T02:38:12.880",
     "description": "Description",
     "tags": [
       "Test",
@@ -14,9 +14,9 @@
   {
     "id": 532,
     "summary": "Testing",
-    "dueDate": "2019-03-28T02:38:12.880Z",
-    "created": "2019-03-28T02:38:12.880Z",
-    "updated": "2019-03-28T02:38:12.880Z",
+    "dueDate": "2019-04-08T05:00:00Z",
+    "created": "2019-04-08T05:00:00Z",
+    "updated": "2019-04-08T05:00:00Z",
     "description": "Description",
     "tags": [
       "Test",
@@ -26,9 +26,9 @@
   {
     "id": 532,
     "summary": "Different Summary Title",
-    "dueDate": "2019-03-28T02:38:12.880Z",
-    "created": "2019-03-28T02:38:12.880Z",
-    "updated": "2019-03-28T02:38:12.880Z",
+    "dueDate": "2019-04-08T05:00:00Z",
+    "created": "2019-03-31T04:00:00Z",
+    "updated": "2019-03-31T04:00:00Z",
     "description": "Description",
     "tags": [
       "Test",

@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="card-footer">
-          <small class="text-muted dueIn">{{task.dueDate}}</small>
+          <small class="text-muted dueIn">{{task.dueDate | convertToDueIn}}</small>
           <small class="text-muted taskId">#{{task.id}}</small>
         </div>
       </div>

@@ -12,6 +12,7 @@ import {ToolbarComponent} from "./work/toolbar/toolbar.component";
 import {WorkComponent} from "./work/work.component";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { ConvertToDueInPipe } from './work/convert-to-due-in.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from "@angular/forms";
     NavComponent,
     HomeComponent,
     ToolbarComponent,
-    WorkComponent
+    WorkComponent,
+    ConvertToDueInPipe
   ],
   imports: [
     BrowserModule,

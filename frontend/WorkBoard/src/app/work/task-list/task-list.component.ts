@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {ITask} from "../task";
+import {ITask} from "../../models/task";
 
 @Component({
   selector: "app-task-list",
