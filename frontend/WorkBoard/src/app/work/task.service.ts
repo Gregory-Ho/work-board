@@ -1,15 +1,15 @@
-import {Injectable} from '@angular/core';
-import {Observable, throwError} from 'rxjs';
-import {ITask} from './task';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {catchError, tap} from 'rxjs/operators';
+import {Injectable} from "@angular/core";
+import {Observable, throwError} from "rxjs";
+import {ITask} from "./task";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {catchError, tap} from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class TaskService {
 
-  private taskUrl = 'assets/tasks.json';
+  private taskUrl = "assets/tasks.json";
 
   constructor(private httpClient: HttpClient) {
   }
