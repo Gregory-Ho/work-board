@@ -13,6 +13,7 @@ import {WorkComponent} from "./work/work.component";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { ConvertToDueInPipe } from './work/convert-to-due-in.pipe';
+import { CreateModalComponent } from './work/create-modal/create-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConvertToDueInPipe } from './work/convert-to-due-in.pipe';
     HomeComponent,
     ToolbarComponent,
     WorkComponent,
-    ConvertToDueInPipe
+    ConvertToDueInPipe,
+    CreateModalComponent
   ],
   imports: [
     BrowserModule,

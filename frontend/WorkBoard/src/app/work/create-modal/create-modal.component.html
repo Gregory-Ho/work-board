@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="modal fade" id="createModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create New Task</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="form-group form-row">
+              <label for="titleInputText" class="col-4 col-sm-2 col-form-label">Task Title: </label>
+              <div class="col-8 col-sm-10">
+                <input type="text" class="form-control" id="titleInputText">
+              </div>
+            </div>
+            <div class="form-group form-row">
+              <label for="descriptionInputText" class="col-4 col-sm-2 col-form-label">Description: </label>
+              <div class="col-8 col-sm-10">
+                <textarea class="form-control" id="descriptionInputText" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="form-group form-row">
+              <label for="tagInput" class="col-4 col-sm-2 col-form-label">Tags: </label>
+              <div class="col-8 col-sm-10">
+                <div class="form-row">
+                  <div class="col-8">
+                    <input type="text" class="form-control" id="tagInput">
+                  </div>
+                  <div class="col-4">
+                    <button type="button" class="btn btn-info">Add</button>
+                  </div>
+                </div>
+                <div class="tags">
+                  <span *ngFor="let tag of tags" class="tag">{{tag}}
+                    <button type="button" class="closeTag">
+                      <span>&times;</span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group form-row">
+              <label for="dueDateInput" class="col-4 col-sm-2 col-form-label">Due Date: </label>
+              <div class="col-8 col-sm-10">
+                <input type="text" class="form-control" id="dueDateInput"/>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-success">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

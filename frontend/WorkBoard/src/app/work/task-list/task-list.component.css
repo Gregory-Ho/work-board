@@ -28,6 +28,7 @@
 .tag:not([href]):hover {
   color: #000099;
   background-color: #eee;
+  cursor: pointer;
 }
 
 .tags {
