@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="modal fade" id="createModal" tabindex="-1" role="dialog">
+  <div class="modal fade" id="createModal" tabindex="-1" role="dialog" (hide.bs.modal)="clearForm()">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -8,7 +8,7 @@
             <span>&times;</span>
           </button>
         </div>
-        <form (ngSubmit)="createTask()">
+        <form>
           <div class="modal-body">
             <div class="form-group form-row">
               <label for="titleInputText" class="col-4 col-sm-2 col-form-label">Task Title: </label>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="tags">
                   <span *ngFor="let tag of taskModel.tags" class="tag">{{tag}}
-                    <button type="button" class="closeTag">
+                    <button type="button" class="closeTag" (click)="removeTag($event)">
                       <span>&times;</span>
                     </button>
                   </span>
@@ -45,13 +45,13 @@
             <div class="form-group form-row">
               <label for="dueDateInput" class="col-4 col-sm-2 col-form-label">Due Date: </label>
               <div class="col-8 col-sm-10">
-                <input type="text" class="form-control" id="dueDateInput" [(ngModel)]="taskModel.dueDate" name="dueDate"/>
+                <input type="datetime-local" class="form-control" id="dueDateInput" [(ngModel)]="taskModel.dueDate" name="dueDate"/>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-light" data-dismiss="modal" (click)="clearForm()">Cancel</button>
+            <button type="button" class="btn btn-success" (click)="createTask()">Save</button>
           </div>
         </form>
       </div>

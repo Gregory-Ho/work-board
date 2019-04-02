@@ -5,5 +5,5 @@ export interface ITask {
   created: Date;
   updated: Date;
   description: string;
-  tags: Array<string>;
+  tags: Set<string>;
 }
