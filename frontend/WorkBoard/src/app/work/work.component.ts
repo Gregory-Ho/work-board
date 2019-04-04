@@ -12,6 +12,7 @@ export class WorkComponent implements OnInit {
   private tasksToDisplay: ITask[];
   private allTasks: ITask[];
   private gotError = true;
+  private searchString: string = "";
 
   constructor(private taskService: TaskService) {
   }
@@ -30,8 +31,14 @@ export class WorkComponent implements OnInit {
     );
   }
 
-  filterTasks(searchString: string): void {
-    searchString = searchString.toLocaleLowerCase();
-    this.tasksToDisplay = this.allTasks.filter((task: ITask) => task.summary.toLocaleLowerCase().includes(searchString));
+  addTaskToList(task: ITask): void {
+    this.allTasks.push(task);
+    console.log("Added Task");
+    this.filterTasks(this.searchString);
+  }
+
+  filterTasks(searchStringInput: string): void {
+    this.searchString = searchStringInput.toLocaleLowerCase();
+    this.tasksToDisplay = this.allTasks.filter((task: ITask) => task.summary.toLocaleLowerCase().includes(this.searchString));
   }
 }

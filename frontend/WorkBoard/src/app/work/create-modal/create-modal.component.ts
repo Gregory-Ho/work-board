@@ -1,8 +1,8 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import {ITask} from "../../models/task";
 import {CreateTaskModel} from "./create-task-model";
 
-import $ from "jquery";
+import {TaskService} from "../service/task.service";
 
 @Component({
   selector: "app-create-modal",
@@ -11,10 +11,13 @@ import $ from "jquery";
 })
 export class CreateModalComponent implements OnInit {
 
+  @Output() taskCreated: EventEmitter<ITask> = new EventEmitter<ITask>();
+
+
   public taskModel: ITask;
   public tagEntry: string;
 
-  constructor() {
+  constructor(private taskService: TaskService) {
     this.taskModel = new CreateTaskModel("", "", new Set<string>(), "");
     this.tagEntry = "";
   }
@@ -24,6 +27,15 @@ export class CreateModalComponent implements OnInit {
 
   createTask(): void {
       console.log(this.taskModel);
+      this.taskService.createTask(this.taskModel).subscribe(
+        data => {
+          this.taskCreated.emit(data);
+          console.log("Emitting event");
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 
   addTag() {

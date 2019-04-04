@@ -1,2 +1,2 @@
-<app-toolbar (searchEntered)="filterTasks($event)"></app-toolbar>
+<app-toolbar (searchEntered)="filterTasks($event)" (taskCreated)="addTaskToList($event)"></app-toolbar>
 <app-task-list [tasks]="tasksToDisplay" [gotError]="gotError"></app-task-list>

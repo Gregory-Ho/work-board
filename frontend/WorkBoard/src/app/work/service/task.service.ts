@@ -3,6 +3,7 @@ import {Observable, throwError} from "rxjs";
 import {ITask} from "../../models/task";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {catchError, tap} from "rxjs/operators";
+import {CreateTaskModel} from '../create-modal/create-task-model';
 
 @Injectable({
   providedIn: "root"
@@ -10,6 +11,7 @@ import {catchError, tap} from "rxjs/operators";
 export class TaskService {
 
   private taskUrl = "assets/tasks.json";
+  private createTaskUrl = "";
 
   constructor(private httpClient: HttpClient) {
   }
@@ -17,6 +19,13 @@ export class TaskService {
   getTasks(): Observable<ITask[]> {
     return this.httpClient.get<ITask[]>(this.taskUrl).pipe(
       tap(data => console.log(JSON.stringify(data))),
+      catchError(this.errorHandler)
+    );
+  }
+
+  createTask(body: CreateTaskModel): Observable<ITask> {
+    return this.httpClient.post<CreateTaskModel>(this.createTaskUrl, body).pipe(
+      tap(data => console.log(`Sending Request To Create Task: ${JSON.stringify(data)}`)),
       catchError(this.errorHandler)
     );
   }

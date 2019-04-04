@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output, ViewChild} from "@angular/core";
 import {CreateModalComponent} from "../create-modal/create-modal.component";
 import {CreateTaskModel} from "../create-modal/create-task-model";
+import {ITask} from '../../models/task';
 
 @Component({
   selector: "app-toolbar",
@@ -10,6 +11,7 @@ import {CreateTaskModel} from "../create-modal/create-task-model";
 export class ToolbarComponent implements OnInit {
 
   @Output() searchEntered: EventEmitter<string> = new EventEmitter<string>();
+  @Output() taskCreated: EventEmitter<ITask> = new EventEmitter<ITask>();
 
   @ViewChild(CreateModalComponent) modal: CreateModalComponent;
 
@@ -17,6 +19,11 @@ export class ToolbarComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  forwardTaskCreatedEvent(task: ITask): void {
+    console.log("forwarding event");
+    this.taskCreated.emit(task);
   }
 
   set searchString(value: string) {
