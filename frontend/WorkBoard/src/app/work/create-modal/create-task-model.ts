@@ -9,7 +9,7 @@ export class CreateTaskModel implements ITask {
   constructor(
     public summary: string,
     public description: string,
-    public tags: Set<string>,
+    public tags: string[],
     public dueDate: any
   ) {}
 

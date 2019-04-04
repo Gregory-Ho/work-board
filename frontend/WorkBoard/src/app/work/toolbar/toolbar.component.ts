@@ -31,7 +31,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   initializeModal(): void {
-    this.modal.taskModel = new CreateTaskModel("", "", new Set<string>(), null);
+    this.modal.taskModel = new CreateTaskModel("", "", [], null);
     this.modal.tagEntry = "";
     console.log(this.modal.taskModel.dueDate);
   }

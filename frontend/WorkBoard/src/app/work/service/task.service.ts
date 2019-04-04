@@ -11,7 +11,7 @@ import {CreateTaskModel} from '../create-modal/create-task-model';
 export class TaskService {
 
   private taskUrl = "assets/tasks.json";
-  private createTaskUrl = "";
+  private createTaskUrl = "http://localhost:8080/api/task";
 
   constructor(private httpClient: HttpClient) {
   }

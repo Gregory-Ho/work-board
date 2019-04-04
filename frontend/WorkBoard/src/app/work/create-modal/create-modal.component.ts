@@ -18,7 +18,7 @@ export class CreateModalComponent implements OnInit {
   public tagEntry: string;
 
   constructor(private taskService: TaskService) {
-    this.taskModel = new CreateTaskModel("", "", new Set<string>(), "");
+    this.taskModel = new CreateTaskModel("", "", [], "");
     this.tagEntry = "";
   }
 
@@ -39,15 +39,15 @@ export class CreateModalComponent implements OnInit {
   }
 
   addTag() {
-    if (this.tagEntry !== null && this.tagEntry !== "" && !this.taskModel.tags.has(this.tagEntry)) {
-      this.taskModel.tags.add(this.tagEntry);
+    if (this.tagEntry !== null && this.tagEntry !== "" && !this.taskModel.tags.includes(this.tagEntry)) {
+      this.taskModel.tags.push(this.tagEntry);
     }
   }
 
   removeTag(event: MouseEvent) {
     const tagName = (event.target as HTMLElement).parentNode.previousSibling.textContent.trim();
-    if (this.taskModel.tags.has(tagName)) {
-      this.taskModel.tags.delete(tagName);
+    if (this.taskModel.tags.includes(tagName)) {
+      this.taskModel.tags.splice(this.taskModel.tags.indexOf(tagName), 1);
     }
   }
 
