@@ -10,8 +10,7 @@ import {CreateTaskModel} from '../create-modal/create-task-model';
 })
 export class TaskService {
 
-  private taskUrl = "assets/tasks.json";
-  private createTaskUrl = "http://localhost:8080/api/task";
+  private taskUrl = "http://localhost:8080/api/tasks";
 
   constructor(private httpClient: HttpClient) {
   }
@@ -24,7 +23,7 @@ export class TaskService {
   }
 
   createTask(body: CreateTaskModel): Observable<ITask> {
-    return this.httpClient.post<CreateTaskModel>(this.createTaskUrl, body).pipe(
+    return this.httpClient.post<CreateTaskModel>(this.taskUrl, body).pipe(
       tap(data => console.log(`Sending Request To Create Task: ${JSON.stringify(data)}`)),
       catchError(this.errorHandler)
     );

@@ -1,8 +1,6 @@
 package com.huskit8520g.workboard.models;
 
 import java.util.Date;
-import java.util.Set;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,8 +25,7 @@ public class Task {
 
   private String description;
 
-  @ElementCollection
-  private Set<String> tags;
+  private String[] tags;
 
   public Integer getId() {
     return id;
@@ -78,11 +75,11 @@ public class Task {
     this.description = description;
   }
 
-  public Set<String> getTags() {
+  public String[] getTags() {
     return tags;
   }
 
-  public void setTags(Set<String> tags) {
+  public void setTags(String[] tags) {
     this.tags = tags;
   }
 }

@@ -2,6 +2,8 @@ import {Component, OnInit} from "@angular/core";
 import {ITask} from "../models/task";
 import {TaskService} from "./service/task.service";
 
+declare var $ : any;
+
 @Component({
   selector: "app-work",
   templateUrl: "./work.component.html",
@@ -35,6 +37,8 @@ export class WorkComponent implements OnInit {
     this.allTasks.push(task);
     console.log("Added Task");
     this.filterTasks(this.searchString);
+    $("#createModal").modal("hide");
+    console.log("hiding modal");
   }
 
   filterTasks(searchStringInput: string): void {

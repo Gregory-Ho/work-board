@@ -26,21 +26,22 @@ export class CreateModalComponent implements OnInit {
   }
 
   createTask(): void {
-      console.log(this.taskModel);
-      this.taskService.createTask(this.taskModel).subscribe(
-        data => {
-          this.taskCreated.emit(data);
-          console.log("Emitting event");
-        },
-        error => {
-          console.log(error);
-        }
-      );
+    console.log(this.taskModel);
+    this.taskService.createTask(this.taskModel).subscribe(
+      data => {
+        this.taskCreated.emit(data);
+        console.log("Emitting event");
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   addTag() {
     if (this.tagEntry !== null && this.tagEntry !== "" && !this.taskModel.tags.includes(this.tagEntry)) {
       this.taskModel.tags.push(this.tagEntry);
+      this.tagEntry = "";
     }
   }
 
