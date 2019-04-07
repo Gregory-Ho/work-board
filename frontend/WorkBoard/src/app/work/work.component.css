@@ -1,0 +1,25 @@
+.detailContainer{
+
+}
+
+.listContainer{
+  width: 60%;
+  height: calc(100vh - 60px);
+  display:inline-block;
+  overflow: auto;
+  float:left;
+}
+
+@media (max-width: 992px){
+  .listContainer{
+    height: calc(100vh - 2.5rem - 16px);
+  }
+}
+
+.displayDetail{
+  height:100%;
+  display: inline-block;
+  width: 40%;
+  overflow: auto;
+  float:right;
+}
