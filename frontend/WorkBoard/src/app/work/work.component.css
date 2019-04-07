@@ -1,12 +1,13 @@
-.detailContainer{
-
-}
-
 .listContainer{
-  width: 60%;
+  width: 100%;
   height: calc(100vh - 60px);
   display:inline-block;
   overflow: auto;
+  transition: width 200ms;
+}
+
+.shrinkListContainer{
+  width: 60%;
   float:left;
 }
 
@@ -16,10 +17,27 @@
   }
 }
 
-.displayDetail{
+.detailContainer{
   height:100%;
   display: inline-block;
   width: 40%;
   overflow: auto;
   float:right;
+}
+
+.closeContainer {
+  width: 100%;
+}
+
+.closePanelButton {
+  float: right;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.closePanelButton:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+  transition-duration: 150ms;
 }

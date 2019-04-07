@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ITask} from "../../models/task";
 
 @Component({
@@ -10,10 +10,16 @@ export class TaskListComponent implements OnInit {
 
   @Input() tasks: ITask[];
   @Input() gotError: boolean;
+  @Output() clickedTaskId: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  taskClicked(taskId: number): void {
+    console.log(`Task #${taskId} was clicked`);
+    this.clickedTaskId.emit(taskId);
   }
 }

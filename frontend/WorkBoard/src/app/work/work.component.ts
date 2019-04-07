@@ -15,6 +15,8 @@ export class WorkComponent implements OnInit {
   private allTasks: ITask[];
   private gotError = true;
   private searchString: string = "";
+  private selectedTaskId: number = null;
+  private showDetailPanel: boolean = false;
 
   constructor(private taskService: TaskService) {
   }
@@ -39,6 +41,15 @@ export class WorkComponent implements OnInit {
     this.filterTasks(this.searchString);
     $("#createModal").modal("hide");
     console.log("hiding modal");
+  }
+
+  updateSelectedTaskId(taskId: number): void{
+    this.selectedTaskId = taskId;
+    this.showDetailPanel = true;
+  }
+
+  closeDetailPanel(): void {
+    this.showDetailPanel = false;
   }
 
   filterTasks(searchStringInput: string): void {
