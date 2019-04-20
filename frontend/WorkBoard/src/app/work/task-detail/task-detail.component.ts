@@ -1,4 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ITask} from '../../models/task';
+import {TaskService} from '../service/task.service';
 
 @Component({
   selector: 'app-task-detail',
@@ -7,11 +9,17 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class TaskDetailComponent implements OnInit {
 
-  @Input() taskId: number;
+  @Output() closePanelButtonClicked = new EventEmitter<void>();
+  @Input() taskModel: ITask;
+  @Input() gotError: boolean = true;
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
+  }
+
+  closeDetailPanel(): void {
+    this.closePanelButtonClicked.emit();
   }
 
 }

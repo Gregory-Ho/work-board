@@ -13,9 +13,9 @@ export class WorkComponent implements OnInit {
 
   private tasksToDisplay: ITask[];
   private allTasks: ITask[];
+  private selectedTask: ITask = null;
   private gotError = true;
   private searchString: string = "";
-  private selectedTaskId: number = null;
   private showDetailPanel: boolean = false;
 
   constructor(private taskService: TaskService) {
@@ -44,7 +44,16 @@ export class WorkComponent implements OnInit {
   }
 
   updateSelectedTaskId(taskId: number): void{
-    this.selectedTaskId = taskId;
+    this.taskService.getTaskById(taskId).subscribe(
+      data => {
+        this.selectedTask = data;
+        this.gotError = false;
+      },
+      error => {
+        console.log(error);
+        this.gotError = true;
+      }
+    );
     this.showDetailPanel = true;
   }
 

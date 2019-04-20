@@ -22,6 +22,7 @@ public class GetController {
     return repository.findAll();
   }
 
+  // May want to implement a getTaskDetailById endpoint to include more information like stats and time worked on
   @RequestMapping(path = "/tasks/{id}")
   public Task getTaskById(@PathVariable int id) {
     return repository.findById(id).get();

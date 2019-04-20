@@ -15,6 +15,7 @@ import {FormsModule} from "@angular/forms";
 import { ConvertToDueInPipe } from './work/convert-to-due-in.pipe';
 import { CreateModalComponent } from './work/create-modal/create-modal.component';
 import { TaskDetailComponent } from './work/task-detail/task-detail.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TaskDetailComponent } from './work/task-detail/task-detail.component';
     TaskDetailComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

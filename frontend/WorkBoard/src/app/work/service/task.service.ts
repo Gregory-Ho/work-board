@@ -29,6 +29,12 @@ export class TaskService {
     );
   }
 
+  getTaskById(id: number): Observable<ITask> {
+    return this.httpClient.get<ITask>(`${this.taskUrl}/${id}`).pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
   private errorHandler(error: HttpErrorResponse) {
     let errorMessage = `Status Code: ${error.status}\nError: ${error.message}`;
     return throwError(errorMessage);

@@ -1,3 +1,38 @@
 <div class="container-fluid">
- <app-home></app-home>
+  <div *ngIf="gotError">
+    Could not load requested task. Try checking the console.
+    <div class="topBar">
+      <button type="button" class="closePanelButton" (click)="closeDetailPanel()">
+        &times;
+      </button
+    </div>
+  </div>
+  <div *ngIf="!gotError">
+    <div class="topBar">
+      <span class="text-muted taskId">#{{taskModel.id}} - {{taskModel.dueDate | convertToDueIn}}</span>
+      <button type="button" class="btn btn-outline-secondary editButton">
+        Edit
+      </button>
+      <button type="button" class="closePanelButton" (click)="closeDetailPanel()">
+        &times;
+      </button>
+    </div>
+    <div>
+      <p class="title">{{taskModel.summary}}</p>
+      <hr>
+      <p>{{taskModel.description}}</p>
+      <div class="tags">
+        <span *ngFor="let tag of taskModel.tags" class="tag">{{tag}}</span>
+      </div>
+    </div>
+    <hr>
+    <p>Date Modified: {{taskModel.updated | date:"MMMM d, y, h:mm a"}}</p>
+    <p>Date Created: {{taskModel.created | date:"MMMM d, y, h:mm a"}}</p>
+    <div class="sectionBreak">
+      <span class="sectionBreakText">Comments</span>
+    </div>
+    <div class="sectionBreak">
+      <span class="sectionBreakText">Activity</span>
+    </div>
+  </div>
 </div>

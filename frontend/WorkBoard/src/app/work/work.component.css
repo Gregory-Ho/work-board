@@ -1,43 +1,32 @@
-.listContainer{
+.listContainer {
   width: 100%;
   height: calc(100vh - 60px);
-  display:inline-block;
+  display: inline-block;
   overflow: auto;
   transition: width 200ms;
 }
 
-.shrinkListContainer{
+.shrinkListContainer {
   width: 60%;
-  float:left;
+  float: left;
 }
 
-@media (max-width: 992px){
-  .listContainer{
+@media (max-width: 992px) {
+  .listContainer {
     height: calc(100vh - 2.5rem - 16px);
   }
 }
 
-.detailContainer{
-  height:100%;
+.detailContainer {
+  height: calc(100vh - 2.5rem - 16px);
   display: inline-block;
   width: 40%;
   overflow: auto;
-  float:right;
-}
-
-.closeContainer {
-  width: 100%;
-}
-
-.closePanelButton {
   float: right;
-  border: none;
-  background: none;
-  outline: none;
+  background-color: white;
+  border-left: 1px solid #ccc;
 }
 
-.closePanelButton:hover {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
-  transition-duration: 150ms;
+.content {
+  border-top: 1px solid #ccc;
 }

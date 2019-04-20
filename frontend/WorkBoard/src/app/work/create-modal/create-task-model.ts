@@ -4,7 +4,7 @@ export class CreateTaskModel implements ITask {
 
   public id = 0;
   public created = new Date();
-  public updated = null;
+  public updated = this.created;
 
   constructor(
     public summary: string,
