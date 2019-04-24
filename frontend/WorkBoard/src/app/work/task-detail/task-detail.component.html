@@ -1,16 +1,16 @@
 <div class="container-fluid">
   <div *ngIf="gotError">
-    Could not load requested task. Try checking the console.
     <div class="topBar">
+      <span class="taskId">Could not load requested task. Try checking the console.</span>
       <button type="button" class="closePanelButton" (click)="closeDetailPanel()">
         &times;
-      </button
+      </button>
     </div>
   </div>
   <div *ngIf="!gotError">
     <div class="topBar">
       <span class="text-muted taskId">#{{taskModel.id}} - {{taskModel.dueDate | convertToDueIn}}</span>
-      <button type="button" class="btn btn-outline-secondary editButton">
+      <button type="button" class="btn btn-outline-secondary editButton" data-toggle="modal" data-target="#updateTaskModal">
         Edit
       </button>
       <button type="button" class="closePanelButton" (click)="closeDetailPanel()">
@@ -36,3 +36,4 @@
     </div>
   </div>
 </div>
+<app-create-modal [modalId]="'updateTaskModal'" [taskModel]="taskModel" [tagEntry]="" (submittedTaskModel)="handleUpdateEvent($event)"></app-create-modal>

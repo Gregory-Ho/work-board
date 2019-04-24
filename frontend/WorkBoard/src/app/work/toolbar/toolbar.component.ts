@@ -1,7 +1,7 @@
-import {Component, EventEmitter, OnInit, Output, ViewChild} from "@angular/core";
-import {CreateModalComponent} from "../create-modal/create-modal.component";
+import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import {CreateTaskModel} from "../create-modal/create-task-model";
 import {ITask} from '../../models/task';
+import {TaskService} from '../service/task.service';
 
 @Component({
   selector: "app-toolbar",
@@ -13,9 +13,10 @@ export class ToolbarComponent implements OnInit {
   @Output() searchEntered: EventEmitter<string> = new EventEmitter<string>();
   @Output() taskCreated: EventEmitter<ITask> = new EventEmitter<ITask>();
 
-  @ViewChild(CreateModalComponent) modal: CreateModalComponent;
+  private emptyTaskModel: ITask = new CreateTaskModel("", "", [], null);
+  private emptyTagInput: string;
 
-  constructor() {
+  constructor(private taskService: TaskService) {
   }
 
   ngOnInit() {
@@ -31,8 +32,18 @@ export class ToolbarComponent implements OnInit {
   }
 
   initializeModal(): void {
-    this.modal.taskModel = new CreateTaskModel("", "", [], null);
-    this.modal.tagEntry = "";
-    console.log(this.modal.taskModel.dueDate);
+    this.emptyTaskModel = new CreateTaskModel("", "", [], null);
+  }
+
+  createTask(taskModel: ITask): void {
+    this.taskService.createTask(taskModel).subscribe(
+      data => {
+        this.forwardTaskCreatedEvent(data);
+        console.log("Emitting event");
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }

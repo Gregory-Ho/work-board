@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from "@angular/core";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ITask} from "../../models/task";
 import {CreateTaskModel} from "./create-task-model";
 
@@ -11,31 +11,19 @@ import {TaskService} from "../service/task.service";
 })
 export class CreateModalComponent implements OnInit {
 
-  @Output() taskCreated: EventEmitter<ITask> = new EventEmitter<ITask>();
+  @Output() submittedTaskModel: EventEmitter<ITask> = new EventEmitter<ITask>();
+  @Input() modalId: string = null;
+  @Input() taskModel: ITask = new CreateTaskModel("", "", [], "");
+  @Input() tagEntry: string = "";
 
-
-  public taskModel: ITask;
-  public tagEntry: string;
-
-  constructor(private taskService: TaskService) {
-    this.taskModel = new CreateTaskModel("", "", [], "");
-    this.tagEntry = "";
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-  createTask(): void {
-    console.log(this.taskModel);
-    this.taskService.createTask(this.taskModel).subscribe(
-      data => {
-        this.taskCreated.emit(data);
-        console.log("Emitting event");
-      },
-      error => {
-        console.log(error);
-      }
-    );
+  handleSubmit(): void {
+    this.submittedTaskModel.emit(this.taskModel);
   }
 
   addTag() {

@@ -20,5 +20,5 @@
       </div>
     </div>
   </div>
-  <app-create-modal (taskCreated)="forwardTaskCreatedEvent($event)"></app-create-modal>
+  <app-create-modal [modalId]="'createModal'" [taskModel]="emptyTaskModel" [tagEntry]="emptyTagInput" (submittedTaskModel)="createTask($event)"></app-create-modal>
 </nav>

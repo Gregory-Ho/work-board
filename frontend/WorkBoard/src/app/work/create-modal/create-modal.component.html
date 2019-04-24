@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="modal fade" id="createModal" tabindex="-1" role="dialog">
+  <div class="modal fade" [id]="modalId" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -51,7 +51,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-success" (click)="createTask()">Save</button>
+            <button type="button" class="btn btn-success" (click)="handleSubmit()">Save</button>
           </div>
         </form>
       </div>

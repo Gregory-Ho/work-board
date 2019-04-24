@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {ITask} from "../models/task";
 import {TaskService} from "./service/task.service";
 
-declare var $ : any;
+declare var $: any;
 
 @Component({
   selector: "app-work",
@@ -14,7 +14,8 @@ export class WorkComponent implements OnInit {
   private tasksToDisplay: ITask[];
   private allTasks: ITask[];
   private selectedTask: ITask = null;
-  private gotError = true;
+  private gotErrorWhenGettingAllTasks = true;
+  private gotErrorWhenGettingSelectedTaskDetail = true;
   private searchString: string = "";
   private showDetailPanel: boolean = false;
 
@@ -25,12 +26,12 @@ export class WorkComponent implements OnInit {
     this.taskService.getTasks().subscribe(
       data => {
         this.allTasks = data;
-        this.gotError = false;
+        this.gotErrorWhenGettingAllTasks = false;
         this.tasksToDisplay = this.allTasks;
       },
       error => {
         console.log(error);
-        this.gotError = true;
+        this.gotErrorWhenGettingAllTasks = true;
       }
     );
   }
@@ -43,15 +44,15 @@ export class WorkComponent implements OnInit {
     console.log("hiding modal");
   }
 
-  updateSelectedTaskId(taskId: number): void{
+  handleTaskSelected(taskId: number): void {
     this.taskService.getTaskById(taskId).subscribe(
       data => {
         this.selectedTask = data;
-        this.gotError = false;
+        this.gotErrorWhenGettingSelectedTaskDetail = false;
       },
       error => {
         console.log(error);
-        this.gotError = true;
+        this.gotErrorWhenGettingSelectedTaskDetail = true;
       }
     );
     this.showDetailPanel = true;

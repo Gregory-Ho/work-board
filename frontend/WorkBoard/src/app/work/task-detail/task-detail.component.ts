@@ -22,4 +22,6 @@ export class TaskDetailComponent implements OnInit {
     this.closePanelButtonClicked.emit();
   }
 
+  handleUpdateEvent(task: ITask): void {
+  }
 }
