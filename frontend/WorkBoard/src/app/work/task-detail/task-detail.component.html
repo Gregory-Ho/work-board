@@ -10,7 +10,7 @@
   <div *ngIf="!gotError">
     <div class="topBar">
       <span class="text-muted taskId">#{{taskModel.id}} - {{taskModel.dueDate | convertToDueIn}}</span>
-      <button type="button" class="btn btn-outline-secondary editButton" data-toggle="modal" data-target="#updateTaskModal">
+      <button type="button" class="btn btn-outline-secondary editButton" (click)="initializeModal()" data-toggle="modal" data-target="#updateTaskModal">
         Edit
       </button>
       <button type="button" class="closePanelButton" (click)="closeDetailPanel()">
@@ -36,4 +36,4 @@
     </div>
   </div>
 </div>
-<app-create-modal [modalId]="'updateTaskModal'" [taskModel]="taskModel" [tagEntry]="" (submittedTaskModel)="handleUpdateEvent($event)"></app-create-modal>
+<app-create-modal [modalId]="'updateTaskModal'" [taskModel]="taskModel" [(tagEntry)]="currentTagInputValue" (submittedTaskModel)="handleUpdateEvent($event)"></app-create-modal>

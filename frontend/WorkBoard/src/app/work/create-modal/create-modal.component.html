@@ -1,4 +1,5 @@
-<div class="container-fluid">
+<p *ngIf="!taskModel">You selected an invalid task. Try checking the logs.</p>
+<div class="container-fluid" *ngIf="taskModel">
   <div class="modal fade" [id]="modalId" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -27,7 +28,7 @@
               <div class="col-8 col-sm-10">
                 <div class="form-row">
                   <div class="col-8">
-                    <input type="text" class="form-control" id="tagInput" [(ngModel)]="tagEntry" name="tagEntry">
+                    <input type="text" class="form-control" id="tagInput" [(ngModel)]="tagEntry" name="tagEntry" (change)="handleTagEntryChange()">
                   </div>
                   <div class="col-4">
                     <button type="button" class="btn btn-info" (click)="addTag()">Add</button>

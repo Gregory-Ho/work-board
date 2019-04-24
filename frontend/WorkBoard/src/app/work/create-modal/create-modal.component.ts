@@ -12,9 +12,10 @@ import {TaskService} from "../service/task.service";
 export class CreateModalComponent implements OnInit {
 
   @Output() submittedTaskModel: EventEmitter<ITask> = new EventEmitter<ITask>();
+  @Output() tagEntryChange: EventEmitter<string> = new EventEmitter();
+  @Input() tagEntry: string = "";
   @Input() modalId: string = null;
   @Input() taskModel: ITask = new CreateTaskModel("", "", [], "");
-  @Input() tagEntry: string = "";
 
   constructor() {
   }
@@ -38,6 +39,10 @@ export class CreateModalComponent implements OnInit {
     if (this.taskModel.tags.includes(tagName)) {
       this.taskModel.tags.splice(this.taskModel.tags.indexOf(tagName), 1);
     }
+  }
+
+  handleTagEntryChange() {
+    this.tagEntryChange.emit(this.tagEntry);
   }
 
 }

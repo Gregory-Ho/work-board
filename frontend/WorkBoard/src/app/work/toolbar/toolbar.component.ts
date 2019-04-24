@@ -14,7 +14,7 @@ export class ToolbarComponent implements OnInit {
   @Output() taskCreated: EventEmitter<ITask> = new EventEmitter<ITask>();
 
   private emptyTaskModel: ITask = new CreateTaskModel("", "", [], null);
-  private emptyTagInput: string;
+  private currentTagInputValue: string;
 
   constructor(private taskService: TaskService) {
   }
@@ -33,6 +33,7 @@ export class ToolbarComponent implements OnInit {
 
   initializeModal(): void {
     this.emptyTaskModel = new CreateTaskModel("", "", [], null);
+    this.currentTagInputValue = null;
   }
 
   createTask(taskModel: ITask): void {

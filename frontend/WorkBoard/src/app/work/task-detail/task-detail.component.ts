@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ITask} from '../../models/task';
 import {TaskService} from '../service/task.service';
+import {CreateTaskModel} from "../create-modal/create-task-model";
 
 @Component({
   selector: 'app-task-detail',
@@ -13,6 +14,8 @@ export class TaskDetailComponent implements OnInit {
   @Input() taskModel: ITask;
   @Input() gotError: boolean = true;
 
+  private currentTagInputValue: string;
+
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
@@ -20,6 +23,10 @@ export class TaskDetailComponent implements OnInit {
 
   closeDetailPanel(): void {
     this.closePanelButtonClicked.emit();
+  }
+
+  initializeModal(): void {
+    this.currentTagInputValue = null;
   }
 
   handleUpdateEvent(task: ITask): void {
