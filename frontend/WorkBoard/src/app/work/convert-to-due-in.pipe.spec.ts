@@ -1,4 +1,4 @@
-import { ConvertToDueInPipe } from './convert-to-due-in.pipe';
+import {ConvertToDueInPipe} from './convert-to-due-in.pipe';
 
 describe('ConvertToDueInPipe', () => {
   it('create an instance', () => {

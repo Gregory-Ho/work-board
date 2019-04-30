@@ -2,8 +2,6 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ITask} from "../../models/task";
 import {CreateTaskModel} from "./create-task-model";
 
-import {TaskService} from "../service/task.service";
-
 @Component({
   selector: "app-create-modal",
   templateUrl: "./create-modal.component.html",
@@ -13,6 +11,7 @@ export class CreateModalComponent implements OnInit {
 
   @Output() submittedTaskModel: EventEmitter<ITask> = new EventEmitter<ITask>();
   @Output() tagEntryChange: EventEmitter<string> = new EventEmitter();
+  @Output() taskModelChange: EventEmitter<ITask> = new EventEmitter();
   @Input() tagEntry: string = "";
   @Input() modalId: string = null;
   @Input() taskModel: ITask = new CreateTaskModel("", "", [], "");

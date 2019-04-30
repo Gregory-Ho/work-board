@@ -1,17 +1,19 @@
 package com.huskit8520g.workboard.models;
 
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 public class Task {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
+  @NotNull
   private Integer id;
 
   @NotBlank

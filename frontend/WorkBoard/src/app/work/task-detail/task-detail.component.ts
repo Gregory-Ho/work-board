@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ITask} from '../../models/task';
 import {TaskService} from '../service/task.service';
-import {CreateTaskModel} from "../create-modal/create-task-model";
 
 @Component({
   selector: 'app-task-detail',
@@ -11,10 +10,18 @@ import {CreateTaskModel} from "../create-modal/create-task-model";
 export class TaskDetailComponent implements OnInit {
 
   @Output() closePanelButtonClicked = new EventEmitter<void>();
-  @Input() taskModel: ITask;
+  @Output() updateCompleted = new EventEmitter<ITask>();
   @Input() gotError: boolean = true;
 
+  private taskModel: ITask;
+  private taskModelCopy: ITask;
   private currentTagInputValue: string;
+
+  @Input("taskModel")
+  set TaskModel(task: ITask) {
+    this.taskModel = task;
+    this.taskModelCopy = JSON.parse(JSON.stringify(task));
+  }
 
   constructor(private taskService: TaskService) { }
 
@@ -30,5 +37,14 @@ export class TaskDetailComponent implements OnInit {
   }
 
   handleUpdateEvent(task: ITask): void {
+    this.taskService.updateTaskById(task).subscribe(
+      data => {
+        this.taskModel = data;
+        this.updateCompleted.emit(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }

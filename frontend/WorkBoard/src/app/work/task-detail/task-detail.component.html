@@ -19,7 +19,7 @@
     </div>
     <div>
       <p class="title">{{taskModel.summary}}</p>
-      <hr>
+      <hr *ngIf="taskModel.description">
       <p>{{taskModel.description}}</p>
       <div class="tags">
         <span *ngFor="let tag of taskModel.tags" class="tag">{{tag}}</span>
@@ -36,4 +36,8 @@
     </div>
   </div>
 </div>
-<app-create-modal [modalId]="'updateTaskModal'" [taskModel]="taskModel" [(tagEntry)]="currentTagInputValue" (submittedTaskModel)="handleUpdateEvent($event)"></app-create-modal>
+<app-create-modal [modalId]="'updateTaskModal'"
+                  [(taskModel)]="taskModelCopy"
+                  [(tagEntry)]="currentTagInputValue"
+                  (submittedTaskModel)="handleUpdateEvent($event)"
+></app-create-modal>

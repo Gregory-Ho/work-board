@@ -35,8 +35,14 @@ export class TaskService {
     );
   }
 
+  updateTaskById(task: ITask): Observable<ITask> {
+    return this.httpClient.put<ITask>(`${this.taskUrl}/${task.id}`, task).pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
   private errorHandler(error: HttpErrorResponse) {
-    let errorMessage = `Status Code: ${error.status}\nError: ${error.message}`;
+    const errorMessage = `Status Code: ${error.status}\nError: ${error.message}`;
     return throwError(errorMessage);
   }
 }

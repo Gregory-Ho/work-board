@@ -58,12 +58,19 @@ export class WorkComponent implements OnInit {
     this.showDetailPanel = true;
   }
 
+  updateTaskInList(task: ITask): void {
+    const taskIndex = this.allTasks.findIndex(x => x.id === task.id);
+    this.allTasks.splice(taskIndex, 1, task);
+    this.filterTasks(this.searchString);
+    $("#updateTaskModal").modal("hide");
+  }
+
   closeDetailPanel(): void {
     this.showDetailPanel = false;
   }
 
   filterTasks(searchStringInput: string): void {
     this.searchString = searchStringInput.toLocaleLowerCase();
-    this.tasksToDisplay = this.allTasks.filter((task: ITask) => task.summary.toLocaleLowerCase().includes(this.searchString));
+    this.tasksToDisplay = this.allTasks.filter(task => task.summary.toLocaleLowerCase().includes(this.searchString));
   }
 }
