@@ -6,9 +6,15 @@
   padding-bottom: 5px;
 }
 
-.editButton, .deleteButton {
+.editButton, .deleteButton, .statusBadge {
   padding: 0.1875rem 0.375rem;
   margin-left: 0.5rem;
+}
+
+.statusBadge{
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 .closePanelButton {

@@ -10,7 +10,10 @@
   <div *ngIf="!gotError">
     <div class="topBar">
       <span class="text-muted taskId">#{{taskModel.id}} - {{taskModel.dueDate | convertToDueIn}}</span>
-      <button *ngIf="taskModel.status !== TaskStatus.DELETED" type="button" class="btn btn-outline-danger deleteButton" (click)="deleteSelectedTask()">
+      <span *ngIf="taskModel.status === TaskStatus.COMPLETED" class="badge badge-success statusBadge">Completed</span>
+      <span *ngIf="taskModel.status === TaskStatus.DELETED" class="badge badge-danger statusBadge">Deleted</span>
+      <button *ngIf="taskModel.status !== TaskStatus.DELETED" type="button" class="btn btn-outline-danger deleteButton" data-toggle="modal"
+              data-target="#deleteTaskModal">
         Delete
       </button>
       <button *ngIf="taskModel.status === TaskStatus.ACTIVE" type="button" class="btn btn-outline-secondary editButton" (click)="initializeModal()" data-toggle="modal"
@@ -45,3 +48,7 @@
                   [(tagEntry)]="currentTagInputValue"
                   (submittedTaskModel)="handleUpdateEvent($event)"
 ></app-create-modal>
+<app-delete-task-confirmation-modal [modalId]="'deleteTaskModal'"
+                                    [taskModel]="taskModel"
+                                    (deleteSubmitted)="deleteSelectedTask()"
+></app-delete-task-confirmation-modal>

@@ -1,7 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {ITask} from "../models/task";
 import {TaskService} from "./service/task.service";
-import {TaskStatus} from "../models/task-status-enum";
 
 declare var $: any;
 
@@ -71,13 +70,20 @@ export class WorkComponent implements OnInit {
     $("#updateTaskModal").modal("hide");
   }
 
+  deleteTaskInListAndCloseModal(task: ITask): void {
+    this.updateTaskInList(task);
+    $("#deleteTaskModal").modal("hide");
+  }
+
   closeDetailPanel(): void {
     this.showDetailPanel = false;
   }
 
   filterTasks(searchStringInput: string): void {
     this.searchString = searchStringInput.toLocaleLowerCase();
-    this.tasksToDisplay = this.allTasks.filter(task => task.status === TaskStatus.ACTIVE);
-    this.tasksToDisplay = this.tasksToDisplay.filter(task => task.summary.toLocaleLowerCase().includes(this.searchString));
+    // commented for testing purposes
+    // this.tasksToDisplay = this.allTasks.filter(task => task.status === TaskStatus.ACTIVE);
+    // change below to    this.tasksToDisplay
+    this.tasksToDisplay = this.allTasks.filter(task => task.summary.toLocaleLowerCase().includes(this.searchString));
   }
 }
