@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {ITask} from "../models/task";
 import {TaskService} from "./service/task.service";
+import {TaskStatus} from "../models/task-status-enum";
 
 declare var $: any;
 
@@ -27,7 +28,7 @@ export class WorkComponent implements OnInit {
       data => {
         this.allTasks = data;
         this.gotErrorWhenGettingAllTasks = false;
-        this.tasksToDisplay = this.allTasks;
+        this.filterTasks("");
       },
       error => {
         console.log(error);
@@ -53,6 +54,7 @@ export class WorkComponent implements OnInit {
       error => {
         console.log(error);
         this.gotErrorWhenGettingSelectedTaskDetail = true;
+        alert(`Unable to open task with id #${taskId} failed. Please check the logs.`);
       }
     );
     this.showDetailPanel = true;
@@ -62,6 +64,10 @@ export class WorkComponent implements OnInit {
     const taskIndex = this.allTasks.findIndex(x => x.id === task.id);
     this.allTasks.splice(taskIndex, 1, task);
     this.filterTasks(this.searchString);
+  }
+
+  updateTaskInListAndCloseModal(task: ITask): void {
+    this.updateTaskInList(task);
     $("#updateTaskModal").modal("hide");
   }
 
@@ -71,6 +77,7 @@ export class WorkComponent implements OnInit {
 
   filterTasks(searchStringInput: string): void {
     this.searchString = searchStringInput.toLocaleLowerCase();
-    this.tasksToDisplay = this.allTasks.filter(task => task.summary.toLocaleLowerCase().includes(this.searchString));
+    this.tasksToDisplay = this.allTasks.filter(task => task.status === TaskStatus.ACTIVE);
+    this.tasksToDisplay = this.tasksToDisplay.filter(task => task.summary.toLocaleLowerCase().includes(this.searchString));
   }
 }

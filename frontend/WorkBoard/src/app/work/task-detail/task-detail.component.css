@@ -6,8 +6,9 @@
   padding-bottom: 5px;
 }
 
-.editButton {
+.editButton, .deleteButton {
   padding: 0.1875rem 0.375rem;
+  margin-left: 0.5rem;
 }
 
 .closePanelButton {

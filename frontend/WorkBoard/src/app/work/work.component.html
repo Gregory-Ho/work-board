@@ -9,7 +9,8 @@
     <app-task-detail [taskModel]="selectedTask"
                      [gotError]="gotErrorWhenGettingSelectedTaskDetail"
                      (closePanelButtonClicked)="closeDetailPanel()"
-                     (updateCompleted)="updateTaskInList($event)"
+                     (updateCompleted)="updateTaskInListAndCloseModal($event)"
+                     (deleteCompleted)="updateTaskInList($event)"
     ></app-task-detail>
   </div>
 </div>

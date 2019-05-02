@@ -29,6 +29,8 @@ public class Task {
 
   private String[] tags;
 
+  private TaskStatus status;
+
   public Integer getId() {
     return id;
   }
@@ -83,5 +85,13 @@ public class Task {
 
   public void setTags(String[] tags) {
     this.tags = tags;
+  }
+
+  public TaskStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(TaskStatus status) {
+    this.status = status;
   }
 }

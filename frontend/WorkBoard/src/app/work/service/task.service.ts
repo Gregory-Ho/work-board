@@ -41,6 +41,12 @@ export class TaskService {
     );
   }
 
+  deleteTaskById(id: number): Observable<ITask> {
+    return this.httpClient.delete<ITask>(`${this.taskUrl}/${id}`).pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
   private errorHandler(error: HttpErrorResponse) {
     const errorMessage = `Status Code: ${error.status}\nError: ${error.message}`;
     return throwError(errorMessage);

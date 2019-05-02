@@ -10,7 +10,11 @@
   <div *ngIf="!gotError">
     <div class="topBar">
       <span class="text-muted taskId">#{{taskModel.id}} - {{taskModel.dueDate | convertToDueIn}}</span>
-      <button type="button" class="btn btn-outline-secondary editButton" (click)="initializeModal()" data-toggle="modal" data-target="#updateTaskModal">
+      <button *ngIf="taskModel.status !== TaskStatus.DELETED" type="button" class="btn btn-outline-danger deleteButton" (click)="deleteSelectedTask()">
+        Delete
+      </button>
+      <button *ngIf="taskModel.status === TaskStatus.ACTIVE" type="button" class="btn btn-outline-secondary editButton" (click)="initializeModal()" data-toggle="modal"
+              data-target="#updateTaskModal">
         Edit
       </button>
       <button type="button" class="closePanelButton" (click)="closeDetailPanel()">
