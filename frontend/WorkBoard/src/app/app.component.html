@@ -1,4 +1,4 @@
-<app-nav *ngIf="router.url != '/home'"></app-nav>
+<app-nav *ngIf="router.url != '/home' && isAuthenticated"></app-nav>
 <div class="contentContainer">
   <router-outlet></router-outlet>
 </div>

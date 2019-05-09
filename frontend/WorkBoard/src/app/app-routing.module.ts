@@ -3,11 +3,15 @@ import {RouterModule, Routes} from "@angular/router";
 
 import {HomeComponent} from "./home/home.component";
 import {WorkComponent} from "./work/work.component";
+import {OktaAuthGuard, OktaCallbackComponent} from "@okta/okta-angular";
+import {onAuthRequired} from "./app.component";
+
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
-  {path: "dashboard", component: WorkComponent},
   {path: "", redirectTo: "home", pathMatch: "full"},
+  {path: 'implicit/callback', component: OktaCallbackComponent},
+  {path: "home", component: HomeComponent, canActivate: [OktaAuthGuard], data: {onAuthRequired: onAuthRequired}},
+  {path: "dashboard", component: WorkComponent, canActivate: [OktaAuthGuard], data: {onAuthRequired: onAuthRequired}},
   {path: "**", redirectTo: "home", pathMatch: "full"}
 ];
 

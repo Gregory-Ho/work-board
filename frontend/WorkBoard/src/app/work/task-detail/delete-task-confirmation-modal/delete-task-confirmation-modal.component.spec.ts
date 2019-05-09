@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DeleteTaskConfirmationModalComponent } from './delete-task-confirmation-modal.component';
+import {DeleteTaskConfirmationModalComponent} from './delete-task-confirmation-modal.component';
 
 describe('DeleteTaskConfirmationModalComponent', () => {
   let component: DeleteTaskConfirmationModalComponent;
