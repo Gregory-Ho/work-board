@@ -8,7 +8,7 @@ import {HomeComponent} from "./home/home.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {ToolbarComponent} from "./work/toolbar/toolbar.component";
 import {WorkComponent} from "./work/work.component";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {ConvertToDueInPipe} from './work/convert-to-due-in.pipe';
 import {CreateModalComponent} from './work/create-modal/create-modal.component';
@@ -16,6 +16,7 @@ import {TaskDetailComponent} from './work/task-detail/task-detail.component';
 import {CommonModule} from '@angular/common';
 import {DeleteTaskConfirmationModalComponent} from './work/task-detail/delete-task-confirmation-modal/delete-task-confirmation-modal.component';
 import {OktaAuthModule} from '@okta/okta-angular';
+import {AuthInterceptor} from "./shared/auth.interceptor";
 
 const config = {
   issuer: 'https://dev-809274.okta.com/oauth2/default',
@@ -44,7 +45,7 @@ const config = {
     FormsModule,
     OktaAuthModule.initAuth(config)
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

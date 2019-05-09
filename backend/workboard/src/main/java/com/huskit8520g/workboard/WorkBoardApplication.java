@@ -9,5 +9,4 @@ public class WorkBoardApplication {
   public static void main(String[] args) {
     SpringApplication.run(WorkBoardApplication.class, args);
   }
-
 }
