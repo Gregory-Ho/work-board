@@ -12,6 +12,7 @@ export class ToolbarComponent implements OnInit {
 
   @Output() searchEntered: EventEmitter<string> = new EventEmitter<string>();
   @Output() taskCreated: EventEmitter<ITask> = new EventEmitter<ITask>();
+  @Output() sortSelected: EventEmitter<string> = new EventEmitter<string>();
 
   private emptyTaskModel: ITask = new CreateTaskModel("", "", [], null);
   private currentTagInputValue: string;
@@ -29,6 +30,10 @@ export class ToolbarComponent implements OnInit {
 
   set searchString(value: string) {
     this.searchEntered.emit(value);
+  }
+
+  sort(sortFilter: string) {
+    this.sortSelected.emit(sortFilter);
   }
 
   initializeModal(): void {

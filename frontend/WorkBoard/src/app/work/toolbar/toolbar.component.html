@@ -6,12 +6,12 @@
   <div class="rightNavOptions">
     <input [(ngModel)]="searchString" class="form-control" type="Search" placeholder="Search" aria-label="Search"/>
     <div class="sortOptions">
-      <div class="dropdown">
-        <a class="dropdown-toggle sortBy" role="button" data-toggle="dropdown">
+      <div class="dropdown" >
+        <a class="dropdown-toggle sortBy"  role="button" data-toggle="dropdown">
           Sort By:&nbsp;
         </a>
         <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" (click)="sort('wegtwe')" >Action</a>
           <a class="dropdown-item" href="#">Another action</a>
         </div>
       </div>

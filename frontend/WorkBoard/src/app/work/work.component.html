@@ -1,4 +1,4 @@
-<app-toolbar (searchEntered)="filterTasks($event)" (taskCreated)="addTaskToList($event)"></app-toolbar>
+<app-toolbar (searchEntered)="filterTasks($event)" (sortSelected)="sortTasks($event)" (taskCreated)="addTaskToList($event)"></app-toolbar>
 <div class="content">
   <app-task-list class="listContainer"
                  [ngClass]="{'shrinkListContainer': showDetailPanel}"

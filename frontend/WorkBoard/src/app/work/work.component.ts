@@ -79,6 +79,11 @@ export class WorkComponent implements OnInit {
     this.showDetailPanel = false;
   }
 
+  sortTasks(sortFilter): void {
+    this.tasksToDisplay = this.allTasks.sort((a, b) => -1);
+    console.log("sorted");
+  }
+
   filterTasks(searchStringInput: string): void {
     this.searchString = searchStringInput.toLocaleLowerCase();
     // commented for testing purposes
