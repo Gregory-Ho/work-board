@@ -13,8 +13,8 @@ export class ToolbarComponent implements OnInit {
   @Output() searchEntered: EventEmitter<string> = new EventEmitter<string>();
   @Output() taskCreated: EventEmitter<ITask> = new EventEmitter<ITask>();
 
-  private emptyTaskModel: ITask = new CreateTaskModel("", "", [], null);
-  private currentTagInputValue: string;
+  public emptyTaskModel: ITask = new CreateTaskModel("", "", [], null);
+  public currentTagInputValue: string;
 
   constructor(private taskService: TaskService) {
   }

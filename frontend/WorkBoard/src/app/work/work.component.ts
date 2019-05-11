@@ -11,13 +11,13 @@ declare var $: any;
 })
 export class WorkComponent implements OnInit {
 
-  private tasksToDisplay: ITask[];
+  public tasksToDisplay: ITask[];
   private allTasks: ITask[];
   private selectedTask: ITask = null;
-  private gotErrorWhenGettingAllTasks = true;
-  private gotErrorWhenGettingSelectedTaskDetail = true;
+  public gotErrorWhenGettingAllTasks = true;
+  public gotErrorWhenGettingSelectedTaskDetail = true;
   private searchString: string = "";
-  private showDetailPanel: boolean = false;
+  public showDetailPanel: boolean = false;
 
   constructor(private taskService: TaskService) {
   }

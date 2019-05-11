@@ -10,7 +10,7 @@ import {CreateTaskModel} from '../create-modal/create-task-model';
 })
 export class TaskService {
 
-  private taskUrl = "http://localhost:8080/api/tasks";
+  private taskUrl = "http://localhost:4200/api/tasks";
 
   constructor(private httpClient: HttpClient) {
   }

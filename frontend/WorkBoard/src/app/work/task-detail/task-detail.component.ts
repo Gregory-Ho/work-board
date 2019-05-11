@@ -16,9 +16,9 @@ export class TaskDetailComponent implements OnInit {
   @Input() gotError: boolean = true;
 
   private TaskStatus = TaskStatus;
-  private taskModel: ITask;
-  private taskModelCopy: ITask;
-  private currentTagInputValue: string;
+  public taskModel: ITask;
+  public taskModelCopy: ITask;
+  public currentTagInputValue: string;
 
   @Input("taskModel")
   set TaskModel(task: ITask) {
