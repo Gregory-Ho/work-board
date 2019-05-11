@@ -24,3 +24,6 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
+
+### Angular Client Build Files ###
+/src/main/resources/public/workboard
