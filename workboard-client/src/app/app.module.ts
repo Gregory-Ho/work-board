@@ -15,12 +15,13 @@ import {CreateModalComponent} from './work/create-modal/create-modal.component';
 import {TaskDetailComponent} from './work/task-detail/task-detail.component';
 import {CommonModule} from '@angular/common';
 import {DeleteTaskConfirmationModalComponent} from './work/task-detail/delete-task-confirmation-modal/delete-task-confirmation-modal.component';
-import {OktaAuthModule} from '@okta/okta-angular';
+import {OKTA_CONFIG, OktaAuthModule} from '@okta/okta-angular';
 import {AuthInterceptor} from "./shared/auth.interceptor";
+import {environment} from "../environments/environment";
 
 const config = {
   issuer: 'https://dev-809274.okta.com/oauth2/default',
-  redirectUri: 'http://localhost:4200/implicit/callback',
+  redirectUri: `http://${environment.serverBaseURL}/implicit/callback`,
   clientId: '0oak7b25rz1AHlzxC356'
 }
 
@@ -43,9 +44,12 @@ const config = {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    OktaAuthModule.initAuth(config)
+    OktaAuthModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [
+    // Must provide okta config as provider, otherwise tokens in prod will fail after 30 seconds.
+    {provide: OKTA_CONFIG, useValue: config},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

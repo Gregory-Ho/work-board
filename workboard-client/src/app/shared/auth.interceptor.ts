@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import { OktaAuthService } from '@okta/okta-angular';
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -14,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   private async handleAccess(request: HttpRequest<any>, next: HttpHandler): Promise<HttpEvent<any>> {
-    if (request.urlWithParams.indexOf('localhost') > -1) {
+    if (request.urlWithParams.indexOf(environment.serverBaseURL) > -1) {
       const accessToken = await this.oktaAuth.getAccessToken();
       request = request.clone({
         setHeaders: {

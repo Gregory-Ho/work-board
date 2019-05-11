@@ -4,13 +4,14 @@ import {ITask} from "../../models/task";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {catchError, tap} from "rxjs/operators";
 import {CreateTaskModel} from '../create-modal/create-task-model';
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: "root"
 })
 export class TaskService {
 
-  private taskUrl = "http://localhost:4200/api/tasks";
+  private taskUrl = `http://${environment.serverBaseURL}/api/tasks`;
 
   constructor(private httpClient: HttpClient) {
   }
