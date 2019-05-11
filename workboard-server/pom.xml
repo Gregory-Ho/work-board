@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.huskit8520g</groupId>
-    <artifactId>workboard</artifactId>
+    <artifactId>workboard-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>WorkBoard</name>
+    <name>WorkBoardServer</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
