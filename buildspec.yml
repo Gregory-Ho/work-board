@@ -15,7 +15,6 @@ phases:
       java: openjdk8
       # name: version
     commands:
-      - echo $SPRING_DATASOURCE_URL
       - apt-get install -y maven
       - cd workboard-client
       - npm install
