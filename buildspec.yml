@@ -1,0 +1,48 @@
+version: 0.2
+
+  #env:
+  #variables:
+  # key: "value"
+  # key: "value"
+  #parameter-store:
+  # key: "value"
+# key: "value"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+      java: openjdk8
+      # name: version
+    commands:
+      - echo $SPRING_DATASOURCE_URL
+      - apt-get install -y maven
+      - cd workboard-client
+      - npm install
+      - npm install -g @angular/cli
+      - cd ../workboard-server
+      - mvn install -DskipTests
+      - cd ..
+      #pre_build:
+      #commands:
+      # - command
+      # - command
+  build:
+    commands:
+      - cd workboard-client
+      - ng build --prod --base-href /workboard/
+      - cd ../workboard-server/
+      - mvn package -DskipTests
+      #post_build:
+      #commands:
+      # - command
+      # - command
+artifacts:
+  files:
+    - workboard-server/target/workboard-server-0.1.0-SNAPSHOT.jar
+  #name: $(date +%Y-%m-%d)
+  discard-paths: yes
+    #base-directory: location
+    #cache:
+    #paths:
+  # - paths
