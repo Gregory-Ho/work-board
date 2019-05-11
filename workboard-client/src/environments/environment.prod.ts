@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverBaseURL: "howstheday.ca"
+  serverBaseURL: "www.howstheday.ca"
 };
