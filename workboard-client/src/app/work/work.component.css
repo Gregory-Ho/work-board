@@ -1,0 +1,32 @@
+.listContainer {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: inline-block;
+  overflow: auto;
+  transition: width 200ms;
+}
+
+.shrinkListContainer {
+  width: 60%;
+  float: left;
+}
+
+@media (max-width: 992px) {
+  .listContainer {
+    height: calc(100vh - 2.5rem - 16px);
+  }
+}
+
+.detailContainer {
+  height: calc(100vh - 2.5rem - 16px);
+  display: inline-block;
+  width: 40%;
+  overflow: auto;
+  float: right;
+  background-color: white;
+  border-left: 1px solid #ccc;
+}
+
+.content {
+  border-top: 1px solid #ccc;
+}

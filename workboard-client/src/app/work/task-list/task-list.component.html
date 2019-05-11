@@ -1,0 +1,28 @@
+<p *ngIf="gotError" class="taskLoadErrorMessage">Error loading tasks. Try checking the console.</p>
+<div class="container-fluid">
+  <div class="row">
+
+    <div *ngFor="let task of tasks" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 cardContainer">
+      <button class="cardButtonWrapper" (click)="taskClicked(task.id)">
+        <div class="card h-100 border-primary">
+          <div class="card-header bg-primary text-light">
+            {{task.summary}}
+          </div>
+          <div class="card-body">
+            <p class="card-text description">
+              {{task.description}}
+            </p>
+            <div class="tags">
+              <a *ngFor="let tag of task.tags" class="tag">{{tag}}</a>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted dueIn">{{task.dueDate | convertToDueIn}}</small>
+            <small class="text-muted taskId">#{{task.id}}</small>
+          </div>
+        </div>
+      </button>
+    </div>
+
+  </div>
+</div>

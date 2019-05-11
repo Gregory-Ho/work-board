@@ -1,0 +1,140 @@
+.sideNavContainer {
+  width: 5vw;
+  max-width: 80px;
+  height: 100vh;
+  position: fixed;
+  padding: 0;
+  border-right: blue solid 1px;
+  background-color: white;
+}
+
+@media (max-width: 992px) {
+  /* width < 992 show top nav*/
+  .sideNavContainer {
+    display: none;
+  }
+}
+
+.navRow {
+  margin: 0;
+  display: flex;
+  padding: 0.25vw 0;
+}
+
+.firstNavRow {
+  padding-top: 0.75vw;
+}
+
+.navIcon {
+  box-sizing: border-box;
+  width: 5vw;
+  max-width: 80px;
+  display: inline;
+  padding: 0 16px;
+
+}
+
+.navLinkSelector {
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 0.25vw 0 0.25vw 0;
+  width: 14vw;
+  max-width: 224px;
+}
+
+.navLinkSelector:hover {
+  background-color: #f0f2f4;
+}
+
+@media (max-width: 1600px) {
+  .navIcon {
+    padding: 0 1vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .navIcon {
+    padding-left: 0;
+  }
+
+  .navLinkSelector {
+    border-radius: 0 5vw 5vw 0;
+    padding-left: 16px;
+    max-width: none;
+    width: calc(100vw - 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .navIcon {
+    width: 7vw;
+  }
+
+  .navLinkSelector {
+    border-radius: 0 7vw 7vw 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .navIcon {
+    width: 10vw;
+    padding-right: 2vw;
+  }
+
+  .navLinkSelector {
+    border-radius: 0 10vw 10vw 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .navIcon {
+    width: 15vw;
+    padding-right: 3vw;
+  }
+
+  .navLinkSelector {
+    border-radius: 0 15vw 15vw 0;
+  }
+}
+
+.sideNavLink {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.topNavContainer {
+  display: none;
+  padding-left: 16px;
+}
+
+@media (max-width: 992px) {
+  .topNavContainer {
+    display: flex;
+    padding-left: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+.activatedRoute {
+  background-color: #b3e7ff;
+}
+
+.activatedRoute:hover {
+  background-color: #b3e7ff;
+}
+
+.navbar-brand {
+  padding-left: 0;
+}
+
+@media (max-width: 992px) {
+  .navbar-brand {
+    display: flex;
+    padding-left: 16px;
+  }
+}
+

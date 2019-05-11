@@ -1,0 +1,16 @@
+<app-toolbar (searchEntered)="filterTasks($event)" (taskCreated)="addTaskToList($event)"></app-toolbar>
+<div class="content">
+  <app-task-list class="listContainer"
+                 [ngClass]="{'shrinkListContainer': showDetailPanel}"
+                 [tasks]="tasksToDisplay"
+                 [gotError]="gotErrorWhenGettingAllTasks"
+                 (clickedTaskId)="handleTaskSelected($event)"></app-task-list>
+  <div *ngIf="showDetailPanel" class="detailContainer">
+    <app-task-detail [taskModel]="selectedTask"
+                     [gotError]="gotErrorWhenGettingSelectedTaskDetail"
+                     (closePanelButtonClicked)="closeDetailPanel()"
+                     (updateCompleted)="updateTaskInListAndCloseModal($event)"
+                     (deleteCompleted)="deleteTaskInListAndCloseModal($event)"
+    ></app-task-detail>
+  </div>
+</div>
