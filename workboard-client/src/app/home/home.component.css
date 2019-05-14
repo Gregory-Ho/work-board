@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 
-@media (max-width: 700px){
+@media (max-width: 672px){
   .welcomeTitle {
     padding-top: 4vw;
     padding-bottom: 5vw;
@@ -22,7 +22,6 @@
 .alignCenter {
   max-width: 672px;
   margin: auto;
-  height: 50%;
 }
 
 .row {
