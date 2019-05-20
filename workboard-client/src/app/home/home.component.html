@@ -1,37 +1,38 @@
-<h1 class="welcomeTitle">
-  Welcome {{userName != null ? userName : firstName + "&nbsp;" + lastName}}!
-</h1>
+<div class="homeContainer">
+  <h1 class="welcomeTitle">
+    Welcome {{userName != null ? userName : firstName + "&nbsp;" + lastName}}!
+  </h1>
 
-<div class="alignCenter">
-  <div class="container-fluid mainContainer ">
-    <div class="row">
-      <a class="card" routerLink="/dashboard">
-        <div class="card-body">
-          <img class="navIcon" [src]="tasksIcon" [title]="tasksTitle" alt="{{tasksTitle}}">
-          <h1 class="iconText">{{tasksTitle}}</h1>
-        </div>
-      </a>
-      <a class="card">
-        <div class="card-body">
-          <img class="navIcon" [src]="plannerIcon" [title]="plannerTitle" alt="{{plannerTitle}}">
-          <h1 class="iconText">{{plannerTitle}}</h1>
-        </div>
-      </a>
-    </div>
-    <div class="row">
-      <a class="card">
-        <div class="card-body">
-          <img class="navIcon" [src]="analyticsIcon" [title]="analyticsTitle" alt="{{analyticsTitle}}">
-          <h1 class="iconText">{{analyticsTitle}}</h1>
-        </div>
-      </a>
-      <a class="card">
-        <div class="card-body">
-          <img class="navIcon" [src]="settingsIcon" [title]="settingsTitle" alt="{{settingsTitle}}">
-          <h1 class="iconText">{{settingsTitle}}</h1>
-        </div>
-      </a>
+  <div class="alignCenter">
+    <div class="container-fluid mainContainer ">
+      <div class="row">
+        <a class="card" routerLink="/dashboard">
+          <div class="card-body">
+            <img class="navIcon" [src]="tasksIcon" [title]="tasksTitle" alt="{{tasksTitle}}">
+            <h1 class="iconText">{{tasksTitle}}</h1>
+          </div>
+        </a>
+        <a class="card">
+          <div class="card-body">
+            <img class="navIcon" [src]="plannerIcon" [title]="plannerTitle" alt="{{plannerTitle}}">
+            <h1 class="iconText">{{plannerTitle}}</h1>
+          </div>
+        </a>
+      </div>
+      <div class="row">
+        <a class="card">
+          <div class="card-body">
+            <img class="navIcon" [src]="analyticsIcon" [title]="analyticsTitle" alt="{{analyticsTitle}}">
+            <h1 class="iconText">{{analyticsTitle}}</h1>
+          </div>
+        </a>
+        <a class="card">
+          <div class="card-body">
+            <img class="navIcon" [src]="settingsIcon" [title]="settingsTitle" alt="{{settingsTitle}}">
+            <h1 class="iconText">{{settingsTitle}}</h1>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
-
