@@ -11,12 +11,13 @@
           Sort By:&nbsp;
         </a>
         <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" (click)="sort('wegtwe')" >Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" (click)="sort('Summary')" >Summary</a>
+          <a class="dropdown-item" (click)="sort('Due Date')" >Due Date</a>
+          <a class="dropdown-item" (click)="sort('Tag')" >Tag</a>
         </div>
       </div>
       <div class="selectedSortMethod">
-        Due Date
+        {{selectedSortMethod}}
       </div>
     </div>
   </div>

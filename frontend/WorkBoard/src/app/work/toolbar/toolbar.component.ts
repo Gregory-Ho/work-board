@@ -16,6 +16,7 @@ export class ToolbarComponent implements OnInit {
 
   private emptyTaskModel: ITask = new CreateTaskModel("", "", [], null);
   private currentTagInputValue: string;
+  private selectedSortMethod: string = "Summary"
 
   constructor(private taskService: TaskService) {
   }
@@ -33,6 +34,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   sort(sortFilter: string) {
+    this.selectedSortMethod = sortFilter;
     this.sortSelected.emit(sortFilter);
   }
 

@@ -18,6 +18,7 @@ export class WorkComponent implements OnInit {
   private gotErrorWhenGettingSelectedTaskDetail = true;
   private searchString: string = "";
   private showDetailPanel: boolean = false;
+  private taskSortingMethod: string = "Summary";
 
   constructor(private taskService: TaskService) {
   }
@@ -79,9 +80,16 @@ export class WorkComponent implements OnInit {
     this.showDetailPanel = false;
   }
 
-  sortTasks(sortFilter): void {
-    this.tasksToDisplay = this.allTasks.sort((a, b) => -1);
-    console.log("sorted");
+  sortTasks(sortMethod: string): void {
+    this.taskSortingMethod = sortMethod;
+    switch (sortMethod) {
+      case "Summary": {
+        // Sorting logic in here
+        this.tasksToDisplay = this.tasksToDisplay.sort((a, b) => -1);
+        console.log("Sorted alphabetically");
+        break;
+      }
+    }
   }
 
   filterTasks(searchStringInput: string): void {
@@ -90,5 +98,6 @@ export class WorkComponent implements OnInit {
     // this.tasksToDisplay = this.allTasks.filter(task => task.status === TaskStatus.ACTIVE);
     // change below to    this.tasksToDisplay
     this.tasksToDisplay = this.allTasks.filter(task => task.summary.toLocaleLowerCase().includes(this.searchString));
+    this.sortTasks(this.taskSortingMethod);
   }
 }
